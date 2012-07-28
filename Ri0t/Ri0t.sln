@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ri0t", "Ri0t\Ri0t.csproj", "{84CDF669-01DB-4CCE-8A5E-98DA486DF7F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ri0t.Tests", "Ri0t.Tests\Ri0t.Tests.csproj", "{33EAB052-CF3A-4AB4-A334-475DD52DFF1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84CDF669-01DB-4CCE-8A5E-98DA486DF7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84CDF669-01DB-4CCE-8A5E-98DA486DF7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84CDF669-01DB-4CCE-8A5E-98DA486DF7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84CDF669-01DB-4CCE-8A5E-98DA486DF7F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33EAB052-CF3A-4AB4-A334-475DD52DFF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33EAB052-CF3A-4AB4-A334-475DD52DFF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33EAB052-CF3A-4AB4-A334-475DD52DFF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33EAB052-CF3A-4AB4-A334-475DD52DFF1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

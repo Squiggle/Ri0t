@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeolocateMe.Geocoder.Mapquest
+namespace Ri0t.Geocoder.Mapquest
 {
     internal class MapquestData
     {

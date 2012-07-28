@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GeolocateMe.Geocoder;
+using Ri0t.Geocoder;
 
-namespace GeolocateMe
+namespace Ri0t
 {
     public class Conversation
     {

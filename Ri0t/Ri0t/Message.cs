@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeolocateMe
+namespace Ri0t
 {
     public static class Message
     {

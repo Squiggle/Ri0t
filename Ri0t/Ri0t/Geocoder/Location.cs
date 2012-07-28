@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeolocateMe.Geocoder
+namespace Ri0t.Geocoder
 {
     public class Location
     {

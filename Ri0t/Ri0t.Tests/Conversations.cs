@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace GeolocateMe.Tests
+namespace Ri0t.Tests
 {
     [TestFixture]
     public class Conversations
@@ -14,13 +14,13 @@ namespace GeolocateMe.Tests
         [TearDown]
         public void TearDown()
         {
-            GeolocateMe.Message.Reset();
+            Ri0t.Message.Reset();
         }
 
         [Test]
         public void GetAResponse()
         {
-            var response = GeolocateMe.Message.Receive("Hello", MyNumber);
+            var response = Ri0t.Message.Receive("Hello", MyNumber);
 
             Assert.That(response == "hi", "Expected a new conversation to say 'hi'. Instead recevied '{0}'", response);
         }
@@ -28,9 +28,9 @@ namespace GeolocateMe.Tests
         [Test]
         public void CanStartAConversation()
         {
-            var response = GeolocateMe.Message.Receive("Hello", MyNumber);
+            var response = Ri0t.Message.Receive("Hello", MyNumber);
             Assert.That(response == "hi");
-            var response2 = GeolocateMe.Message.Receive("What's up?", MyNumber);
+            var response2 = Ri0t.Message.Receive("What's up?", MyNumber);
             Assert.That(response2 == "Hello again", "Expected a new conversation to say 'Hello again'. Instead recevied '{0}'", response);
         }
     }

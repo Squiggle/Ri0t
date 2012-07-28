@@ -6,9 +6,9 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Web;
 using System.IO;
-using GeolocateMe.Geocoder.Mapquest;
+using Ri0t.Geocoder.Mapquest;
 
-namespace GeolocateMe.Geocoder
+namespace Ri0t.Geocoder
 {
     public class MapQuestGeocoder
     {

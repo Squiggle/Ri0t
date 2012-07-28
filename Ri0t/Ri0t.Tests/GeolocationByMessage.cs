@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using Moq;
-using GeolocateMe.Geocoder;
+using Ri0t.Geocoder;
 
-namespace GeolocateMe.Tests
+namespace Ri0t.Tests
 {
     [TestFixture]
     public class GeolocationByMessage
@@ -17,7 +17,7 @@ namespace GeolocateMe.Tests
         public void ParseMessageForLocation()
         {
             //ASSIGN
-            var geoservice = new GeolocateMe.Geocoder.Locationer();
+            var geoservice = new Locationer();
 
             //ACT
             var geoparts = geoservice.Parse(Message1);

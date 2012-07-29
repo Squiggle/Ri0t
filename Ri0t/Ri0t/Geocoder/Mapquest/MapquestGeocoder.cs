@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
+using Ri0t.Interfaces;
+using Ri0t.Geocoder;
 using System.Net;
-using System.Web;
 using System.IO;
-using Ri0t.Geocoder.Mapquest;
+using Newtonsoft.Json;
 
-namespace Ri0t.Geocoder
+namespace Ri0t.Geocoder.Mapquest
 {
-    public class MapQuestGeocoder
+    public class MapquestGeocoder : IGeocoder
     {
+
         private const string MapquestUrl = @"http://open.mapquestapi.com/nominatim/v1/search?format=json&q=";
-        
-        public IList<Location> Geocode(string searchString)
+
+        private IList<Location> GetLocationsForQuery(string searchString)
         {
             var requestUrl = MapquestUrl + System.Web.HttpUtility.UrlEncode(searchString);
             var request = WebRequest.Create(requestUrl);
@@ -24,12 +25,30 @@ namespace Ri0t.Geocoder
 
             Console.WriteLine(json);
 
-            return data.Select(p => new Location {
+            return data.Select(p => new Location
+            {
                 Description = p.Display_Name,
                 Coordinates = String.Format("{0},{1}", p.Lat, p.Lon)
             }).ToList();
         }
 
+        #region IGeocoder Members
+
+        public Result Geocode(string query)
+        {
+            //current hacky mock implementation
+            var locations = GetLocationsForQuery(query);
+
+            Console.WriteLine("Looking up location for:\n{0}", query);
+
+            return new Result
+            {
+                Locations = locations.ToList(),
+                Message = String.Format("Found {0} matches", locations.Count),
+                Success = locations.Count > 0
+            };
+        }
+
+        #endregion
     }
 }
-

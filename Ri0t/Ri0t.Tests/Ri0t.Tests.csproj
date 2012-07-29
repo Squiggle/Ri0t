@@ -8,8 +8,8 @@
     <ProjectGuid>{33EAB052-CF3A-4AB4-A334-475DD52DFF1F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GeolocateMe.Tests</RootNamespace>
-    <AssemblyName>GeolocateMe.Tests</AssemblyName>
+    <RootNamespace>Ri0t.Tests</RootNamespace>
+    <AssemblyName>Ri0t.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

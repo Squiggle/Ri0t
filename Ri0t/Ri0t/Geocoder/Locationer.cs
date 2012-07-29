@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Ri0t.Interfaces;
 
 namespace Ri0t.Geocoder
 {
@@ -12,35 +13,19 @@ namespace Ri0t.Geocoder
     /// </summary>
     public class Locationer
     {
+        private readonly IGeocoder _geocoder;
+
+        public Locationer(IGeocoder geocoder)
+        {
+            _geocoder = geocoder;
+        }
+
         public Result GetForMessage(string message)
         {
             //parse
             var messageParts = Parse(message);
             //geolocate
-            return GetLocations(String.Join(",", messageParts));
-        }
-
-        /// <summary>
-        /// Geolocates the string.
-        /// Returns a list of possible locations.
-        /// </summary>
-        /// <param name="parsedText"></param>
-        /// <returns></returns>
-        public Result GetLocations(string parsedText)
-        {
-            //current hacky mock implementation
-
-            //TODO: hook this up to Google Maps or OSM to try and geolocate the string
-            return new Result
-            {
-                Locations = new List<Location>
-                {
-                    new Location { Description = "Morrissons, Kirkstall, Leeds, LS4", Coordinates = "10,10", Accuracy = Accuracy.Street },
-                    new Location { Description = "Morrissons, City Centre, Leeds, LS2", Coordinates = "15,8", Accuracy = Accuracy.Street }
-                },
-                Message = "Found 2 matches",
-                Success = true
-            };
+            return _geocoder.Geocode(String.Join(",", messageParts));
         }
 
         public IList<string> Parse(string humanReadableMessage)
@@ -54,7 +39,7 @@ namespace Ri0t.Geocoder
             //2. Split "near" or "in"
             var parts = new List<string>();
             parts = m.Split(
-                new string[] {"near", "in"},
+                new string[] {" near ", " in "},
                 StringSplitOptions.RemoveEmptyEntries)
                 .ToList();
             
@@ -62,5 +47,6 @@ namespace Ri0t.Geocoder
 
             return parts;
         }
+
     }
 }

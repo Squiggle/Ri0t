@@ -8,8 +8,8 @@
     <ProjectGuid>{84CDF669-01DB-4CCE-8A5E-98DA486DF7F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GeolocateMe</RootNamespace>
-    <AssemblyName>GeolocateMe</AssemblyName>
+    <RootNamespace>Ri0t</RootNamespace>
+    <AssemblyName>Ri0t</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,11 +47,12 @@
     <Compile Include="Conversation.cs" />
     <Compile Include="Geocoder\Location.cs" />
     <Compile Include="Geocoder\Locationer.cs" />
-    <Compile Include="Geocoder\MapQuestGeocoder.cs" />
     <Compile Include="Geocoder\Mapquest\MapquestData.cs" />
+    <Compile Include="Geocoder\Mapquest\MapquestGeocoder.cs" />
     <Compile Include="Geocoder\Result.cs" />
+    <Compile Include="Interfaces\IGeocoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Message.cs" />
+    <Compile Include="MessageManager.cs" />
     <Compile Include="Service.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
